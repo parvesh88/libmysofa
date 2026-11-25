@@ -14,6 +14,8 @@
 #include "../hrtf/tools.h"
 #include "tests.h"
 
+//.#define VDEBUG 1
+
 void test_lookup() {
   struct MYSOFA_HRTF *hrtf = NULL;
   int err = 0;
@@ -42,7 +44,9 @@ void test_lookup() {
   }
 
 #ifdef VDEBUG
-  printf("r  %f %f\n", lookup->radius_min, lookup->radius_max);
+  printf("\n\tE  %f %f\n", lookup->phi_min, lookup->phi_max);
+  printf("\tA  %f %f\n", lookup->theta_min, lookup->theta_max);
+  printf("\tr  %f %f\n", lookup->radius_min, lookup->radius_max);
 #endif
 
   for (j = 0; j < 10000; j++) {

@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/multithread.dir/tests/multithread.c.o -o multithread  libmysofa.a -lpthread /usr/lib/arm-linux-gnueabihf/libm.so /usr/lib/arm-linux-gnueabihf/libz.so 

@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/internal.dir/tests/internal.c.o CMakeFiles/internal.dir/tests/tools.c.o CMakeFiles/internal.dir/hrtf/tools.c.o -o internal  -lm /usr/lib/arm-linux-gnueabihf/libcunit.so 

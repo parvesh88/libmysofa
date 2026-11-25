@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/mysofa2json.dir/tests/sofa2json.c.o CMakeFiles/mysofa2json.dir/tests/json.c.o -o mysofa2json  libmysofa.a /usr/lib/arm-linux-gnueabihf/libm.so /usr/lib/arm-linux-gnueabihf/libz.so 

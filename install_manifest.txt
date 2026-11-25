@@ -1,0 +1,15 @@
+/usr/local/share/libmysofa/default.sofa
+/usr/local/share/libmysofa/MIT_KEMAR_normal_pinna.sofa
+/usr/local/lib/pkgconfig/libmysofa.pc
+/usr/local/lib/cmake/mysofa/mysofaTargets.cmake
+/usr/local/lib/cmake/mysofa/mysofaTargets-noconfig.cmake
+/usr/local/lib/cmake/mysofa/mysofaConfig.cmake
+/usr/local/lib/cmake/mysofa/mysofaConfigVersion.cmake
+/usr/local/lib/libmysofa.a
+/usr/local/include/mysofa.h
+/usr/local/lib/libmysofa.so.1.3.3
+/usr/local/lib/libmysofa.so.1
+/usr/local/lib/libmysofa.so
+/usr/local/include/mysofa.h
+/usr/local/include/mysofa_export.h
+/usr/local/bin/mysofa2json

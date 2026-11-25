@@ -46,6 +46,7 @@ mysofa_lookup_init(struct MYSOFA_HRTF *hrtf) {
     memcpy(origin, hrtf->SourcePosition.values + i * hrtf->C,
            sizeof(float) * hrtf->C);
     convertCartesianToSpherical(origin, hrtf->C);
+
     if (origin[0] < lookup->phi_min) {
       lookup->phi_min = origin[0];
     }

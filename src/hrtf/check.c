@@ -1,3 +1,5 @@
+
+
 #include "../hdf/reader.h"
 #include "mysofa.h"
 #include "mysofa_export.h"
@@ -205,6 +207,34 @@ MYSOFA_EXPORT int mysofa_check(struct MYSOFA_HRTF *hrtf) {
   if (!verifyAttribute(hrtf->SourcePosition.attributes, "DIMENSION_LIST",
                        "M,C"))
     return MYSOFA_ONLY_SOURCES_WITH_MC_SUPPORTED; // LCOV_EXCL_LINE
+
+  if(hrtf->C != 3)
+	return MYSOFA_INVALID_VALUE;
+
+  float *v = (float *) malloc(sizeof(float) * hrtf->M * hrtf->C);
+
+  for(int i=0; i < (hrtf->M * hrtf->C); i++){
+       v[0] = hrtf->SourcePosition.values[i];
+       v[1] = hrtf->SourcePosition.values[i + 1];
+       v[2] = hrtf->SourcePosition.values[i + 2];
+       mysofa_c2s(v);
+       // printf("\nS %f %f %f", v[0], v[1], v[2]);
+       if(v[0] < -360.0 && v[0] > 360.0){
+		printf("\n\tInvalid a %f", v[0]);
+		return MYSOFA_INVALID_VALUE;
+       }
+       if(v[1] < -90.0 && v[1] > 90.0){
+		printf("\n\tInvalid e %f", v[1]);
+	        return MYSOFA_INVALID_VALUE;
+       }
+       if(v[2] < 0.0){
+		printf("\n\tInvalid r %f", v[2]);
+	        return MYSOFA_INVALID_VALUE;
+       }
+
+  }
+
+  free(v);
 
   return MYSOFA_OK;
 }
